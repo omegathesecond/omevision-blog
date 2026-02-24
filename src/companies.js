@@ -1,12 +1,68 @@
 export const COMPANIES = {
-  eneza: { name: 'Eneza', desc: 'WhatsApp Status Advertising', color: '#16a34a', logo: '📢' },
-  yebolink: { name: 'YeboLink', desc: 'SMS, WhatsApp & Email APIs', color: '#2563eb', logo: '🔗' },
-  vavu: { name: 'Vavu', desc: 'African Marketplace', color: '#7c3aed', logo: '🛍️' },
-  bamzu: { name: 'Bamzu', desc: 'Car Marketplace Africa', color: '#dc2626', logo: '🚗' },
-  yebona: { name: 'Yebona', desc: 'Africa-China Trade Services', color: '#d97706', logo: '🌍' },
-  yebojobs: { name: 'YeboJobs', desc: 'Job Matching Platform', color: '#0891b2', logo: '💼' },
-  yebolearn: { name: 'YeboLearn', desc: 'Education Platform', color: '#059669', logo: '📚' },
-  yebomart: { name: 'YeboMart', desc: 'AI-Powered Shop Management', color: '#f59e0b', logo: '🛒' },
+  eneza: {
+    name: 'Eneza',
+    tagline: 'WhatsApp Status Advertising',
+    desc: 'Reach thousands of customers through authentic WhatsApp Status ads',
+    website: 'https://eneza.app',
+    color: '#25D366',
+    logo: '📱',
+  },
+  yebolink: {
+    name: 'YeboLink',
+    tagline: 'Communications API for Africa',
+    desc: 'SMS, WhatsApp, Email & Voice APIs for African businesses',
+    website: 'https://yebolink.com',
+    color: '#6366f1',
+    logo: '🔗',
+  },
+  vavu: {
+    name: 'Vavu',
+    tagline: 'Africa\'s Classifieds Marketplace',
+    desc: 'Buy and sell anything across Africa with AI-powered listings',
+    website: 'https://vavu.app',
+    color: '#f97316',
+    logo: '🛒',
+  },
+  bamzu: {
+    name: 'Bamzu',
+    tagline: 'Africa\'s Car Marketplace',
+    desc: 'Find new and used cars across Africa',
+    website: 'https://bamzu.app',
+    color: '#ef4444',
+    logo: '🚗',
+  },
+  yebona: {
+    name: 'Yebona',
+    tagline: 'Africa-China Trade Services',
+    desc: 'Verified sourcing agents, freight, currency exchange & more',
+    website: 'https://yebona.com',
+    color: '#f59e0b',
+    logo: '🌏',
+  },
+  yebojobs: {
+    name: 'YeboJobs',
+    tagline: 'Jobs Platform for Africa',
+    desc: 'AI-powered job matching for African job seekers and employers',
+    website: 'https://yebojobs.com',
+    color: '#3b82f6',
+    logo: '💼',
+  },
+  yebolearn: {
+    name: 'YeboLearn',
+    tagline: 'Online Education for Africa',
+    desc: 'Courses, certifications, and learning paths built for Africa',
+    website: 'https://yebolearn.com',
+    color: '#8b5cf6',
+    logo: '📚',
+  },
+  yebomart: {
+    name: 'YeboMart',
+    tagline: 'AI Shop Management',
+    desc: 'Point-of-sale and inventory management for African shops',
+    website: 'https://yebomart.com',
+    color: '#10b981',
+    logo: '🏪',
+  },
 }
 
 export const API_BASE = 'https://autoblogger-238692725328.europe-west1.run.app'
@@ -17,10 +73,11 @@ export function getCompany() {
     const params = new URLSearchParams(window.location.search)
     return params.get('company') || 'eneza'
   }
+  // blog.yebolink.com → yebolink | blog.eneza.app → eneza
   const parts = hostname.split('.')
   return parts[0] === 'blog' ? parts[1] : parts[0]
 }
 
 export function getCompanyInfo(key) {
-  return COMPANIES[key] || { name: key, desc: '', color: '#6b7280', logo: '📝' }
+  return COMPANIES[key] || { name: key, tagline: '', desc: '', website: '#', color: '#6b7280', logo: '📝' }
 }
