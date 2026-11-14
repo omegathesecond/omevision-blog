@@ -5,10 +5,16 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "build": "node node_modules/@omevision/release-guard/cli.mjs --phase source && vite build && node node_modules/@omevision/release-guard/cli.mjs --phase artifacts --path dist",
+    "preview": "vite preview",
+    "postbuild": "node node_modules/@omevision/release-guard/cli.mjs --phase artifacts --path dist",
+    "release:check": "node node_modules/@omevision/release-guard/cli.mjs --phase source",
+    "release:test": "node node_modules/@omevision/release-guard/test/guard.test.mjs && node node_modules/@omevision/release-guard/test/release-wiring.mjs",
+    "deploy": "npm run build && node node_modules/@omevision/release-guard/cli.mjs --phase deploy --path dist -- wrangler pages deploy dist --project-name=omevision-blog --branch=main",
+    "deploy:artifact": "node node_modules/@omevision/release-guard/cli.mjs --phase deploy --path dist -- wrangler pages deploy dist --project-name=omevision-blog --branch=main"
   },
   "dependencies": {
+    "@omevision/release-guard": "file:vendor/omevision-release-guard-1.0.0.tgz",
     "@tailwindcss/typography": "^0.5.19",
     "marked": "^15.0.0",
     "react": "^18.3.1",
@@ -20,6 +26,7 @@
     "@tailwindcss/vite": "^4.0.0",
     "@vitejs/plugin-react": "^4.3.4",
     "tailwindcss": "^4.0.0",
-    "vite": "^6.0.0"
+    "vite": "^6.0.0",
+    "wrangler": "4.129.0"
   }
 }

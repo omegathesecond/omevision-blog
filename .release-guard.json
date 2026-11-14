@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "sources": [
+    "eslint.config.js",
+    "index.html",
+    "package-lock.json",
+    "package.json",
+    "public",
+    "src",
+    "vite.config.js"
+  ],
+  "artifacts": [
+    "dist"
+  ],
+  "buildOutputs": {
+    "build": "dist"
+  },
+  "deployOutputs": {
+    "deploy": "dist",
+    "deploy:artifact": "dist"
+  }
+}
