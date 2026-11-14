@@ -15,11 +15,11 @@ export const COMPANIES = {
     color: '#6366f1',
     logo: '🔗',
   },
-  vavu: {
-    name: 'Vavu',
+  yeboshops: {
+    name: 'YeboShops',
     tagline: 'Africa\'s Classifieds Marketplace',
     desc: 'Buy and sell anything across Africa with AI-powered listings',
-    website: 'https://vavu.app',
+    website: 'https://yeboshops.com',
     color: '#f97316',
     logo: '🛒',
   },
