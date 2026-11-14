@@ -1,4 +1,4 @@
-export const AUTOBLOGGER_URL = 'https://autoblogger-238692725328.europe-west1.run.app'
+export const AUTOBLOGGER_URL = 'https://autoblogger-api-prod-dysic27f5a-ew.a.run.app'
 
 export const COMPANY_CONFIG = {
   eneza: { name: 'Eneza', tagline: 'WhatsApp Status Ads Platform', primaryColor: '#25D366', logo: '📱', domain: 'blog.eneza.app' },
