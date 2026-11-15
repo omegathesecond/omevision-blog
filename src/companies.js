@@ -1,3 +1,4 @@
+import { AUTOBLOGGER_URL } from './config.js'
 export const COMPANIES = {
   eneza: {
     name: 'Eneza',
@@ -65,7 +66,7 @@ export const COMPANIES = {
   },
 }
 
-export const API_BASE = 'https://autoblogger-238692725328.europe-west1.run.app'
+export const API_BASE = AUTOBLOGGER_URL
 
 export function getCompany() {
   const hostname = window.location.hostname
