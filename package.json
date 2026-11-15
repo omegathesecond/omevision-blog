@@ -9,12 +9,12 @@
     "preview": "vite preview",
     "postbuild": "node node_modules/@omevision/release-guard/cli.mjs --phase artifacts --path dist",
     "release:check": "node node_modules/@omevision/release-guard/cli.mjs --phase source",
-    "release:test": "node node_modules/@omevision/release-guard/test/guard.test.mjs && node node_modules/@omevision/release-guard/test/release-wiring.mjs",
-    "deploy": "npm run build && node node_modules/@omevision/release-guard/cli.mjs --phase deploy --path dist -- omevision-ci-release --kind pages --path dist --name omevision-blog --branch main",
-    "deploy:artifact": "node node_modules/@omevision/release-guard/cli.mjs --phase deploy --path dist -- omevision-ci-release --kind pages --path dist --name omevision-blog --branch main"
+    "release:test": "node --test node_modules/@omevision/release-guard/test/*.test.mjs && node node_modules/@omevision/release-guard/test/release-wiring.mjs",
+    "deploy": "npm run build && node node_modules/@omevision/release-guard/cli.mjs --phase deploy --path dist -- omevision-native-release --app google-cloud-build --check \"omevision-blog-pages (hiyebo)\" --target cloud-build/builds --branch master",
+    "deploy:artifact": "node node_modules/@omevision/release-guard/cli.mjs --phase deploy --path dist -- omevision-native-release --app google-cloud-build --check \"omevision-blog-pages (hiyebo)\" --target cloud-build/builds --branch master"
   },
   "dependencies": {
-    "@omevision/release-guard": "file:vendor/omevision-release-guard-1.1.0.tgz",
+    "@omevision/release-guard": "file:vendor/omevision-release-guard-2.0.0.tgz",
     "@tailwindcss/typography": "^0.5.19",
     "marked": "^15.0.0",
     "react": "^18.3.1",
