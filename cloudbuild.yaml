@@ -1,0 +1,41 @@
+{
+  "steps": [
+    {
+      "name": "node:22",
+      "entrypoint": "bash",
+      "args": [
+        "-euc",
+        "npm ci --ignore-scripts --no-audit --no-fund\nnpm run release:test\nnpm run build"
+      ],
+      "id": "build-and-guard"
+    },
+    {
+      "name": "node:22",
+      "entrypoint": "bash",
+      "args": [
+        "-euc",
+        "node node_modules/@omevision/release-guard/cli.mjs --phase deploy --path dist -- node_modules/.bin/wrangler pages deploy dist --project-name=omevision-blog --branch=main --commit-hash=$COMMIT_SHA --commit-dirty=false"
+      ],
+      "secretEnv": [
+        "CLOUDFLARE_API_TOKEN"
+      ],
+      "env": [
+        "CLOUDFLARE_ACCOUNT_ID=9f15f12d867a59b212ed2ae3cf4615ca",
+        "WRANGLER_SEND_METRICS=false"
+      ],
+      "id": "publish-guarded-pages"
+    }
+  ],
+  "availableSecrets": {
+    "secretManager": [
+      {
+        "versionName": "projects/hiyebo-release-ci/secrets/RELEASE__CLOUDFLARE_PUBLISHER_TOKEN/versions/latest",
+        "env": "CLOUDFLARE_API_TOKEN"
+      }
+    ]
+  },
+  "options": {
+    "logging": "CLOUD_LOGGING_ONLY"
+  },
+  "timeout": "1200s"
+}
