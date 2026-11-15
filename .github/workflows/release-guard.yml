@@ -14,7 +14,7 @@ jobs:
         working-directory: .
         run: |
           mkdir -p .release-tools
-          tar -xzf vendor/omevision-release-guard-1.0.0.tgz -C .release-tools
+          tar -xzf vendor/omevision-release-guard-1.1.0.tgz -C .release-tools
           node --test .release-tools/package/test/guard.test.mjs
           node .release-tools/package/cli.mjs --phase source
           node .release-tools/package/test/release-wiring.mjs
