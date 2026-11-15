@@ -8,7 +8,9 @@
     "public",
     "src",
     "vite.config.js",
-    "cloudbuild.yaml"
+    "cloudbuild.yaml",
+    "scripts",
+    "test"
   ],
   "artifacts": [
     "dist"
