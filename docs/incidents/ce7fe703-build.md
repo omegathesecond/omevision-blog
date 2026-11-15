@@ -37,3 +37,10 @@ API operations. PATCH the incident verifyCmd with read-only assertions for this
 released commit and workflow before deployment completion; attach the final live
 retest to the company_operating_lesson. This implementation receipt does not
 claim a repaired production deployment. No bindings or service minima changed.
+
+Rework: reconciled origin/master 66418b9ae0c1cdc2c88b4cff943c5420b55fdf7f
+(the independent direct guard-test fix) into this incident branch. Retained the
+installed-suite discovery launcher and its failure-propagation regression instead
+of duplicating guard execution. Node 22 release:test and build both passed after
+reconciliation, with network disabled. Receipt /tmp/ce7-rework-node22.log SHA256:
+3d8bf973422584b63987f966c5ac0b24eeb328a228f7a532bea792f242ffafdd.
