@@ -44,3 +44,12 @@ installed-suite discovery launcher and its failure-propagation regression instea
 of duplicating guard execution. Node 22 release:test and build both passed after
 reconciliation, with network disabled. Receipt /tmp/ce7-rework-node22.log SHA256:
 3d8bf973422584b63987f966c5ac0b24eeb328a228f7a532bea792f242ffafdd.
+
+Fresh provider inspection during rework: latest trigger build
+ aaf8eb8a-ba8f-493a-b97f-263022d16fbc SUCCESS, master
+66418b9ae0c1cdc2c88b4cff943c5420b55fdf7f, finished
+2026-11-15T19:01:57.982779Z. Both build-and-guard and
+publish-guarded-pages completed. The originally reported failure is superseded.
+Independent host curl retest returned success for Pages HTML and all three
+referenced JS/CSS assets. urllib received HTTP403, retained as client-specific
+failure evidence; curl passed. Branch regression coverage still awaits review.
